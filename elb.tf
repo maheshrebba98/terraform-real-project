@@ -1,5 +1,5 @@
 resource "aws_elb" "bar" {
-  name               = "raham-terraform-elb"
+  name               = "mahi-terraform-elb"
   availability_zones = ["eu-west-3a", "eu-west-3b"]
 
   listener {
@@ -31,8 +31,8 @@ resource "aws_elb" "bar" {
   engine_version          = "5.7.mysql_aurora.2.11.2"
   availability_zones      = ["eu-west-3a", "eu-west-3b"]
   database_name           = "mydb"
-  master_username         = "raham"
-  master_password         = "Rahamshaik#444555"
+  master_username         = "mahesh"
+  master_password         = "admin@123456"
   backup_retention_period = 5
   preferred_backup_window = "07:00-09:00"
 }
