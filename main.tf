@@ -1,16 +1,16 @@
 #this file consists of code for instances and sg
 provider "aws" {
-region = "eu-west-3"
-access_key = "AKIA36JX34OE4AXKSK7E"
-secret_key = "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"
+region = "us-east-1"
+access_key = "AKIAW4VCXAGH6DK7RE4S"
+secret_key = "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"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-06f7633a6b8e0fb0a"
+  ami             = "ami-026ebd4cfe2c043b2"
   instance_type   = "t2.micro"
-  key_name        = "terrapem"
+  key_name        = "kopsnv"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "eu-west-3a"
+  availability_zone = "us-east-1a"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -25,11 +25,11 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-06f7633a6b8e0fb0a"
+  ami             = "ami-026ebd4cfe2c043b2"
   instance_type   = "t2.micro"
-  key_name        = "terrapem"
+  key_name        = "kopsnv"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "eu-west-3b"
+  availability_zone = "us-east-1b"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -44,29 +44,29 @@ EOF
 }
 
 resource "aws_instance" "three" {
-  ami             = "ami-06f7633a6b8e0fb0a"
+  ami             = "ami-026ebd4cfe2c043b2"
   instance_type   = "t2.micro"
-  key_name        = "terrapem"
+  key_name        = "kopsnv"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "eu-west-3a"
+  availability_zone = "us-east-1a"
   tags = {
     Name = "app-server-1"
   }
 }
 
 resource "aws_instance" "four" {
-  ami             = "ami-06f7633a6b8e0fb0a"
+  ami             = "ami-026ebd4cfe2c043b2"
   instance_type   = "t2.micro"
-  key_name        = "terrapem"
+  key_name        = "kopsnv"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "eu-west-3b"
+  availability_zone = "us-east-1b"
   tags = {
     Name = "app-server-2"
   }
 }
 
 resource "aws_security_group" "five" {
-  name = "elb-sg"
+  name = "terra-elb-sg"
   ingress {
     from_port   = 22
     to_port     = 22
@@ -90,7 +90,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "rahamshaikterra7gsywgys7889900prodenvgshj"
+  bucket = "ultramahiesh-prod-wqxuuaak"
 }
 
 resource "aws_iam_user" "seven" {
@@ -105,9 +105,9 @@ default = ["user1", "user2", "user3", "user4"]
 }
 
 resource "aws_ebs_volume" "eight" {
- availability_zone = "eu-west-3a"
+ availability_zone = "us-east-1a"
   size = 40
   tags = {
-    Name = "ebs-001"
+    Name = "terra-ebs-001"
   }
 }
