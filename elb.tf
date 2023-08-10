@@ -30,7 +30,7 @@ resource "aws_elb" "bar" {
   engine                  = "aurora-mysql"
   engine_version          = "5.7.mysql_aurora.2.11.2"
   availability_zones      = ["us-east-1a", "us-east-1b"]
-  database_name           = "mydb"
+  database_name           = "mydbss"
   master_username         = "mahesh"
   master_password         = "admin123456"
   backup_retention_period = 5
