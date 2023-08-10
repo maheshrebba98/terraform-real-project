@@ -90,7 +90,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "ultramahiesh-prod-wqxuuaak"
+  bucket = "ultramahiesh-prod-wqzxswqqs"
 }
 
 resource "aws_iam_user" "seven" {
